@@ -1,0 +1,39 @@
+{
+  "name": "personalpage",
+  "version": "1.0.0",
+  "description": "A personal monopage site",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp styles",
+    "watch": "gulp",
+    "test": "echo \"Welcome!\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://andrearufo@github.com/andrearufo/personalpage.git"
+  },
+  "keywords": [
+    "personal",
+    "monopage",
+    "website",
+    "biolerplate",
+    "curriculum",
+    "cv"
+  ],
+  "author": "andrearufo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrearufo/personalpage/issues"
+  },
+  "homepage": "https://github.com/andrearufo/personalpage#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.7.3",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "node-sass": "^4.5.0",
+    "normalize-scss": "^6.0.0",
+    "pump": "^1.0.2"
+  }
+}

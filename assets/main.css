@@ -1,0 +1,41 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css);
+body {
+  background: #2c3e50;
+  color: #ecf0f1; }
+
+.photo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: url(../images/photo.jpg);
+  background-position: top left;
+  background-size: cover; }
+
+.content {
+  position: absolute;
+  top: 4rem;
+  width: 30%;
+  font-size: 1rem;
+  line-height: 2; }
+  .content.content-left {
+    left: 4rem; }
+  .content.content-right {
+    right: 4rem; }
+  .content h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+    position: relative;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem; }
+    .content h1:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      border-top: 6px solid #ecf0f1; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,62 @@
+// Import the libraries from packages
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css);
+
+// variables
+
+$spacer:		4rem;
+$color-bg:		#2c3e50;
+$color-main: 	#ecf0f1;
+$font-size:		1rem;
+
+// main
+body{
+	background: $color-bg;
+	color: $color-main;
+}
+
+.photo{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-image: url(../images/photo.jpg);
+	background-position: top left;
+	background-size: cover;
+}
+
+.content{
+	position: absolute;
+	top: $spacer;
+	width: 30%;
+	font-size: $font-size;
+	line-height: 2;
+
+	&.content-left{
+		left: $spacer;
+	}
+
+	&.content-right{
+		right: $spacer;
+	}
+
+	h1{
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: $font-size * 2;
+		position: relative;
+		margin-bottom: 2rem;
+		padding-bottom: 2rem;
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 40px;
+			border-top: 6px solid $color-main;
+		}
+
+	}
+}
