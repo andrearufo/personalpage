@@ -139,3 +139,11 @@ body{
 		}
 	}
 }
+
+.credits{
+	position: fixed;
+	left: $spacer;
+	bottom: $spacer;
+	font-size: $font-size * .8;
+	opacity: .7;
+}

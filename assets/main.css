@@ -75,4 +75,11 @@ body {
       .container ul.links > li:not(:last-child) {
         padding-right: 5px; }
 
+.credits {
+  position: fixed;
+  left: 4rem;
+  bottom: 4rem;
+  font-size: 0.96rem;
+  opacity: .7; }
+
 /*# sourceMappingURL=main.css.map */
