@@ -1,41 +1,78 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css");
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,700|Quattrocento:400,700");
 body {
-  background: #2c3e50;
-  color: #ecf0f1; }
+  background: #000000;
+  font-family: "Quattrocento", serif;
+  color: #d9ceca; }
+  body p {
+    margin-bottom: 1rem; }
+  body a {
+    color: #c4b3ac;
+    transition: 0.25s all ease-in-out;
+    text-decoration: none;
+    border-bottom: 1px solid #c4b3ac; }
+    body a:hover {
+      color: #d9ceca;
+      border-color: rgba(196, 179, 172, 0); }
 
 .photo {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   background-image: url(../images/photo.jpg);
   background-position: top left;
   background-size: cover; }
+  @media (min-width: 768px) {
+    .photo {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0; } }
+  @media (max-width: 767px) {
+    .photo {
+      height: 40vh; } }
 
-.content {
-  position: absolute;
-  top: 4rem;
-  width: 30%;
-  font-size: 1rem;
+.container {
+  font-size: 1.2rem;
   line-height: 2; }
-  .content.content-left {
-    left: 4rem; }
-  .content.content-right {
-    right: 4rem; }
-  .content h1 {
+  @media (min-width: 768px) {
+    .container {
+      position: absolute;
+      width: 40%;
+      padding: 4rem; }
+      .container.container-left {
+        left: 0; }
+      .container.container-right {
+        right: 0; } }
+  @media (max-width: 767px) {
+    .container {
+      padding: 4rem 1rem; } }
+  .container h1 {
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 3.6rem;
     position: relative;
     margin-bottom: 2rem;
-    padding-bottom: 2rem; }
-    .content h1:after {
+    padding-bottom: 2rem;
+    font-family: "Oswald", sans-serif; }
+    .container h1:after {
       content: '';
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 40px;
-      border-top: 6px solid #ecf0f1; }
+      width: 60px;
+      border-top: 6px solid #d9ceca; }
+  .container p.lead {
+    font-size: 1.92rem;
+    font-style: italic;
+    margin-bottom: 4rem; }
+  .container .content {
+    margin-bottom: 4rem; }
+  .container ul.links {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .container ul.links > li {
+      display: inline-block; }
+      .container ul.links > li:not(:last-child) {
+        padding-right: 5px; }
 
 /*# sourceMappingURL=main.css.map */

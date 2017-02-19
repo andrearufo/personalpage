@@ -1,62 +1,141 @@
 // Import the libraries from packages
 
-@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css');
 
-// variables
+// Import fonts from resources
+
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700|Quattrocento:400,700');
+
+// Variables
 
 $spacer:		4rem;
-$color-bg:		#2c3e50;
-$color-main: 	#ecf0f1;
-$font-size:		1rem;
+$color-bg:		#000000;
+$color-text: 	#d9ceca;
+$color-links:	darken($color-text, 10%);
+$font-size:		1.2rem;
+$font-headers:	'Oswald', sans-serif;;
+$font-content:	'Quattrocento', serif;
+$breakpoint:	768px;
 
-// main
+// Mixins
+
+@mixin desktop {
+	@media (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin mobile { 
+	@media ( max-width: ($breakpoint - 1) ) {
+		@content;
+	}
+}
+
+// The real style
+ 
 body{
 	background: $color-bg;
-	color: $color-main;
+	font-family: $font-content;
+	color: $color-text;
+	
+	p{
+		margin-bottom: 1rem;
+	}
+
+	a{
+		color: $color-links;
+		transition: 0.25s all ease-in-out;
+		text-decoration: none;
+		border-bottom: 1px solid $color-links;
+
+		&:hover{
+			color: $color-text;
+			border-color: rgba($color-links, 0);
+		}
+	}
 }
 
 .photo{
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
 	background-image: url(../images/photo.jpg);
 	background-position: top left;
 	background-size: cover;
+
+	@include desktop {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+
+	@include mobile {
+		height: 40vh;
+	}
 }
 
-.content{
-	position: absolute;
-	top: $spacer;
-	width: 30%;
+.container{
 	font-size: $font-size;
 	line-height: 2;
 
-	&.content-left{
-		left: $spacer;
+	@include desktop {
+		position: absolute;
+		width: 40%;
+		padding: $spacer;
+
+		&.container-left{
+			left: 0;
+		}
+
+		&.container-right{
+			right: 0;
+		}
 	}
 
-	&.content-right{
-		right: $spacer;
+	@include mobile {
+		padding: $spacer $spacer/4;
 	}
 
 	h1{
 		text-transform: uppercase;
 		font-weight: bold;
-		font-size: $font-size * 2;
+		font-size: $font-size * 3;
 		position: relative;
 		margin-bottom: 2rem;
 		padding-bottom: 2rem;
+		font-family: $font-headers;
 
 		&:after{
 			content: '';
 			position: absolute;
 			left: 0;
 			bottom: 0;
-			width: 40px;
-			border-top: 6px solid $color-main;
+			width: 60px;
+			border-top: 6px solid $color-text;
 		}
 
+	}
+
+	p.lead{
+		font-size: $font-size * 1.6;
+		font-style: italic;
+		margin-bottom: $spacer;
+	}
+
+	.content{
+		margin-bottom: $spacer;
+	}
+
+	ul.links{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		> li{
+			display: inline-block;
+
+			&:not(:last-child){
+				padding-right: 5px;
+			}
+		}
 	}
 }
